@@ -19,6 +19,8 @@ def main() -> None:
     path = os.path.join(output_dir, "entry.txt")
     with open(path, "w", encoding="utf-8") as f:
         f.write(HAIKU)
+    # The grader collects /output as another user: keep the file readable.
+    os.chmod(path, 0o644)
 
 
 if __name__ == "__main__":
